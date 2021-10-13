@@ -1,19 +1,16 @@
-package com.hd.jetpackproject.uis;
+package com.hd.jetpackproject.uis
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.os.Bundle;
-
-import com.hd.jetpackproject.R;
-
-import dagger.hilt.android.AndroidEntryPoint;
+import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import com.hd.jetpackproject.R
+import com.hd.jetpackproject.databinding.ActivityMainBinding
+import dagger.hilt.android.AndroidEntryPoint
+import androidx.databinding.DataBindingUtil.setContentView
 
 @AndroidEntryPoint
-public class MainActivity extends AppCompatActivity {
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView<ActivityMainBinding>(this, R.layout.activity_main)
     }
 }
