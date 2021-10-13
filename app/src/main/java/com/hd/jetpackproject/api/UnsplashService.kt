@@ -3,7 +3,6 @@ package com.hd.jetpackproject.api
 import com.hd.jetpackproject.data.BannerResponse
 import com.hd.jetpackproject.data.UnsplashSearchResponse
 import com.hd.jetpackproject.di.PostInterceptor
-import kotlinx.coroutines.flow.Flow
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -11,12 +10,11 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Query
-import java.util.logging.Logger
 
 
 interface UnsplashService {
 
-    @GET("list/405/1/json")
+    @GET("wxarticle/list/405/1/json")
     suspend fun searchList(
         @Query("k") key: String
     ): UnsplashSearchResponse
@@ -26,7 +24,6 @@ interface UnsplashService {
 
     companion object {
         private const val BASE_URL = "https://www.wanandroid.com/"
-//        private const val BASE_URL = "https://wanandroid.com/wxarticle/"
 
         fun create(): UnsplashService {
             val logger = HttpLoggingInterceptor().apply { level = HttpLoggingInterceptor.Level.BASIC }

@@ -9,7 +9,6 @@ import com.hd.jetpackproject.data.BannerResponse
 import com.hd.jetpackproject.data.UnsplashSearchResponse
 import com.hd.jetpackproject.utils.LOG
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -20,20 +19,17 @@ class UnsplashViewModel @Inject internal constructor(private val repository: Uns
 
     fun query(query: String) {
         viewModelScope.launch {
-            liveQuery.value = repository.search(query).asLiveData().value
+            LOG.d("UnsplashViewModel", "query ")
+            liveQuery.value = repository.search(query)
+            LOG.d("UnsplashViewModel", "query  ${liveQuery.value}")
         }
     }
 
     fun reqBanner() {
         viewModelScope.launch {
-            LOG.d("UnsplashViewModel", "reqBanner $repository")
+            LOG.d("UnsplashViewModel", "reqBanner  ")
             liveBanner.value = repository.reqBanner()
-            LOG.d("UnsplashViewModel", "reqBanner collect ${liveBanner.value}")
-//                .collect {
-//                liveBanner.value = it
-//                LOG.d("UnsplashViewModel", "reqBanner collect $it")
-//            }
-//            liveBanner.value = repository.reqBanner().asLiveData().value
+            LOG.d("UnsplashViewModel", "reqBanner  ${liveBanner.value}")
         }
     }
 
