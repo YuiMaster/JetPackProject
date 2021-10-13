@@ -12,6 +12,10 @@ buildscript {
         coroutinesVersion = "1.4.2"
 
         navigationVersion = '2.3.3'
+
+        gsonVersion = '2.8.2'
+        okhttpLoggingVersion = '4.7.2'
+        retrofitVersion = '2.9.0'
     }
     repositories {
         google()
