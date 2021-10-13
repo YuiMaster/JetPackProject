@@ -1,15 +1,18 @@
 package com.hd.jetpackproject.data
 
-import com.google.gson.annotations.SerializedName
+class UnsplashSearchResponse {
+    var data: List<DataDTO>? = null
+    var errorCode: Int = 0
+    var errorMsg: String? = null
 
-/**
- * Data class that represents a photo search response from Unsplash.
- *
- * Not all of the fields returned from the API are represented here; only the ones used in this
- * project are listed below. For a full list of fields, consult the API documentation
- * [here](https://unsplash.com/documentation#search-photos).
- */
-data class UnsplashSearchResponse(
-//    @field:SerializedName("results") val results: List<UnsplashPhoto>,
-    @field:SerializedName("total_pages") val totalPages: Int
-)
+    class DataDTO {
+        var children: List<*>? = null
+        var courseId: Int? = null
+        var id: Int? = null
+        var name: String? = null
+        var order: Int? = null
+        var parentChapterId: Int? = null
+        var userControlSetTop: Boolean? = null
+        var visible: Int? = null
+    }
+}
