@@ -2,7 +2,7 @@ package com.hd.jetpackproject.utils.files.selector.parser
 
 import android.content.Context
 import android.content.Intent
-import com.hd.jetpackproject.utils.files.parseSysFileManagerUriByDefault
+import com.hd.jetpackproject.utils.files.uri.parseSysFileManagerUriByDefault
 import com.hd.jetpackproject.utils.files.selector.EnSystemFileType
 import java.io.File
 import javax.inject.Inject

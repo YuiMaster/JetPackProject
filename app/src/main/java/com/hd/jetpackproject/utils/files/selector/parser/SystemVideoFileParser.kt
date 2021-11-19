@@ -2,9 +2,9 @@ package com.hd.jetpackproject.utils.files.selector.parser
 
 import android.content.Context
 import android.content.Intent
+import com.hd.jetpackproject.utils.files.uri.copyFileFromUri
 import com.hd.jetpackproject.utils.files.selector.EnSystemFileType
-import com.hudun.androidrecorder.module.record.util.FileSelectUtil
-import com.hd.jetpackproject.utils.files.copyFileFromUri
+import com.hd.jetpackproject.utils.files.uri.uriToFilePath
 import java.io.File
 import javax.inject.Inject
 
@@ -22,7 +22,7 @@ class SystemVideoFileParser @Inject constructor() : AbsSystemFileParser(EnSystem
     override fun parse(context: Context, data: Intent?): File {
         data?.data?.let { uri ->
             try {
-                val filePath = FileSelectUtil.getFilePath(context, uri)
+                val filePath = uri.uriToFilePath(context)
                 var file: File? = null
                 if (!filePath.isNullOrEmpty()) {
                     file = File(filePath)

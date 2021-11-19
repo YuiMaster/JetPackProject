@@ -1,10 +1,12 @@
-package com.hd.jetpackproject.utils.files
+package com.hd.jetpackproject.utils.files.uri
 
 import android.content.Context
 import android.net.Uri
 import androidx.documentfile.provider.DocumentFile
 import com.hd.jetpackproject.utils.ByteConst
 import com.hd.jetpackproject.utils.LOG
+import com.hd.jetpackproject.utils.files.safeDelete
+import com.hd.jetpackproject.utils.files.safeMkdirs
 import com.hd.jetpackproject.utils.strings.getFileFromUri
 import com.hd.jetpackproject.utils.strings.toNotNull
 import java.io.File
